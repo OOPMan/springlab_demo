@@ -1,5 +1,6 @@
 from django.conf.urls import patterns, include, url
 from video_list.api import VideoResource
+from video_list import views
 
 video_resource = VideoResource()
 
@@ -17,5 +18,6 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     # url(r'^admin/', include(admin.site.urls)),
+    url(r'^$', views.index, name='index'),
     (r'^api/', include(video_resource.urls))
 )
