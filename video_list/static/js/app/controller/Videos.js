@@ -15,9 +15,14 @@ Ext.define('VideoList.controller.Videos', {
     init: function() {
         this.control({
             'VideoList': {
-                itemclick: function() {
-                    //TODO: Display pop-up to add a new Video
-                    alert('Create Item Clicked');
+                itemclick: function(self, record) {
+                    record.store.remove(record);
+                    Ext.getStore('Video').sync();
+                }
+            },
+            'button#adder': {
+                click: function() {
+                    debugger;
                 }
             }
         });
