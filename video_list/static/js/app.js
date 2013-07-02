@@ -1,8 +1,9 @@
 Ext.application({
     requires: ['Ext.container.Viewport'],
-    name: 'Video List',
+    name: 'VideoList',
 
-    appFolder: '/static/js/app',
+    appFolder: 'static/js/app',
+    controllers: ['Videos'],
 
     launch: function() {
         Ext.create('Ext.container.Viewport', {
@@ -20,7 +21,21 @@ Ext.application({
                         {
                             xtype: 'panel',
                             region: 'center',
-                            html: 'Video List will go here'
+                            layout: {
+                                type: 'vbox',
+                                align: 'center'
+                            },
+                            items: [
+                                {
+                                    xtype: 'VideoList',
+                                    flex: 1
+                                },
+                                {
+                                    xtype: 'panel',
+                                    html: 'Adder Panel',
+                                    flex: 4
+                                }
+                            ]
                         }
                     ]
                 }
