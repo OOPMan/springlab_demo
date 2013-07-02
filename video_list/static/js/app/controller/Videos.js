@@ -6,7 +6,7 @@
  * To change this template use File | Settings | File Templates.
  */
 
-Ext.define('SpringLabDemo.VideoList.controller.Videos', {
+Ext.define('VideoList.controller.Videos', {
     extend: 'Ext.app.Controller',
     stores: ['Video'],
     models: ['Video'],
@@ -17,6 +17,7 @@ Ext.define('SpringLabDemo.VideoList.controller.Videos', {
             'VideoList': {
                 itemclick: function() {
                     //TODO: Display pop-up to add a new Video
+                    alert('Create Item Clicked');
                 }
             }
         });
