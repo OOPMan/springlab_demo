@@ -14,7 +14,7 @@ Ext.define('VideoList.store.Video', {
 
     listeners: {
         load: function(self, records, successful, eOpts) {
-            if(!successful) return;
+            if(!successful || records.length == 0) return;
             var idMap = {};
             Ext.Array.forEach(records, function(record, index) {
                 var idPart = self.youtubeIdPattern.exec(record.data.url);
