@@ -8,3 +8,8 @@
 .bold {
     font-weight: bold;
 }
+
+.title {
+    font-size: 24pt;
+    font-weight: bold;
+}
