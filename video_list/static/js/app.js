@@ -16,7 +16,15 @@ Ext.application({
                         {
                             xtype: 'panel',
                             region: 'north',
-                            html: 'Title Panel'
+                            layout: {
+                                type: 'vbox',
+                                align: 'center'
+                            },
+                            items: [
+                                {
+                                    xtype: 'panel',
+                                    html: '<span class="title">SpringLab Video List Demo</span> '
+                                }]
                         },
                         {
                             xtype: 'panel',
@@ -28,12 +36,12 @@ Ext.application({
                             items: [
                                 {
                                     xtype: 'VideoList',
-                                    flex: 1
+                                    flex: 4
                                 },
                                 {
                                     xtype: 'panel',
                                     html: 'Adder Panel',
-                                    flex: 4
+                                    flex: 1
                                 }
                             ]
                         }
