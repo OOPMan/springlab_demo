@@ -10,7 +10,7 @@ Ext.define('VideoList.controller.Videos', {
     extend: 'Ext.app.Controller',
     stores: ['Video'],
     models: ['Video'],
-    views: ['Video.List'],
+    views: ['Video.List', 'Video.Add'],
 
     init: function() {
         this.control({
@@ -22,7 +22,19 @@ Ext.define('VideoList.controller.Videos', {
             },
             'button#adder': {
                 click: function() {
-                    debugger;
+                    var adder = Ext.widget('VideoAdder');
+                }
+            },
+            'VideoAdder button[action=save]': {
+                click: function(button) {
+                    var videoStore = Ext.getStore('Video'),
+                        win = button.up('window'),
+                        form = win.down('form'),
+                        values = form.getValues();
+                    win.close();
+                    videoStore.add(values);
+                    videoStore.sync();
+                    videoStore.load();
                 }
             }
         });
