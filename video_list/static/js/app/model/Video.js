@@ -8,12 +8,13 @@
 
 Ext.define('VideoList.model.Video', {
     extend: 'Ext.data.Model',
+
     fields: [
-        { name: 'id', type: 'integer' },
+        { name: 'id', type: 'integer', persist: false },
         { name: 'url', type: 'string' },
-        { name: 'title', type: 'string' },
-        { name: 'description', type: 'string' },
-        { name: 'resource_uri', type: 'string' }
+        { name: 'title', type: 'string', persist: false },
+        { name: 'description', type: 'string', persist: false },
+        { name: 'resource_uri', type: 'string', persist: false }
     ],
 
     proxy: {
