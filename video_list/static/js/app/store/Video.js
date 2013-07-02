@@ -6,19 +6,22 @@
  * To change this template use File | Settings | File Templates.
  */
 
-Ext.define('SpringLabDemo.VideoList.store.Video', {
+Ext.define('VideoList.store.Video', {
     extend: 'Ext.data.Store',
-    model: 'SpringLabDemo.VideoList.model.Video',
+    model: 'VideoList.model.Video',
     autoLoad: true,
 
     proxy: {
         type: 'rest',
-        url: '/api/video',
+        url: '/api/video/',
+        extraParams: {
+            format: 'json'
+        },
         reader: {
-            type: 'rest',
+            type: 'json',
             root: 'objects',
-            successProperty: '' //TODO: Get TastyPie to set a successProperty!
-
+            idProperty: 'id',
+            successProperty: 'success'
         }
     }
 });
