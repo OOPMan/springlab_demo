@@ -14,5 +14,19 @@ Ext.define('VideoList.model.Video', {
         { name: 'title', type: 'string' },
         { name: 'description', type: 'string' },
         { name: 'resource_uri', type: 'string' }
-    ]
+    ],
+
+    proxy: {
+        type: 'rest',
+        url: '/api/video/',
+        extraParams: {
+            format: 'json'
+        },
+        reader: {
+            type: 'json',
+            root: 'objects',
+            idProperty: 'id',
+            successProperty: 'success'
+        }
+    }
 });
