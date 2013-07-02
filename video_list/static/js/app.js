@@ -39,8 +39,9 @@ Ext.application({
                                     flex: 4
                                 },
                                 {
-                                    xtype: 'panel',
-                                    html: 'Adder Panel',
+                                    xtype: 'button',
+                                    id: 'adder',
+                                    text: 'Click here to add a new Video',
                                     flex: 1
                                 }
                             ]
