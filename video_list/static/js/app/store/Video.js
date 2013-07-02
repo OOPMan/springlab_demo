@@ -10,7 +10,7 @@ Ext.define('VideoList.store.Video', {
     extend: 'Ext.data.Store',
     model: 'VideoList.model.Video',
     autoLoad: true,
-    youtubeIdPattern: /v=[a-zA-Z0-9]+/i,
+    youtubeIdPattern: /v=[a-zA-Z0-9_-]{11}/i,
 
     listeners: {
         load: function(self, records, successful, eOpts) {
@@ -18,7 +18,7 @@ Ext.define('VideoList.store.Video', {
             var idMap = {};
             Ext.Array.forEach(records, function(record, index) {
                 var idPart = self.youtubeIdPattern.exec(record.data.url);
-                if(idPart.length == 1) idMap[idPart[0].substring(2)] = index;
+                if(idPart !== null && idPart.length == 1) idMap[idPart[0].substring(2)] = index;
             });
             if(idMap) {
                 gapi.client.load('youtube', 'v3', function() {
