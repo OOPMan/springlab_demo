@@ -14,6 +14,7 @@ Ext.define('VideoList.view.Video.List', {
         '<tpl for=".">',
         '<div class="box">',
             '<span id="{id}" class="item">',
+                '<span class="bold">ID:</span> {id}</span><br/>',
                 '<span class="bold">Title:</span> <tpl if="title">{title}<tpl else><image src="/static/js/ext-4.1.1a/resources/themes/images/default/grid/loading.gif"/></tpl><br/>',
                 '<span class="bold">Description:</span> <tpl if="description">{description}<tpl else><image src="/static/js/ext-4.1.1a/resources/themes/images/default/grid/loading.gif"/></tpl><br/>',
                 '<span class="bold">URL:</span> <a href="{url}">{url}</a><br/><br/>',
