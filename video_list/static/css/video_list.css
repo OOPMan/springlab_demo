@@ -1,0 +1,10 @@
+.box {
+    border-style: solid;
+    border-color: #0000cc;
+    border-width: thin;
+    padding: 25px;
+}
+
+.bold {
+    font-weight: bold;
+}
