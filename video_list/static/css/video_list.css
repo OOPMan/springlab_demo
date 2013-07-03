@@ -19,3 +19,7 @@
     font-size: 16pt;
     font-weight: bold;
 }
+
+.x-panel-body-default {
+    border-style: none;
+}
