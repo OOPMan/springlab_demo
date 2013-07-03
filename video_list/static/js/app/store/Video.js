@@ -11,6 +11,7 @@ Ext.define('VideoList.store.Video', {
     model: 'VideoList.model.Video',
     autoLoad: true,
     youtubeIdPattern: /v=[a-zA-Z0-9_-]{11}/i,
+    pageSize: 5,
 
     listeners: {
         load: function(self, records, successful, eOpts) {
