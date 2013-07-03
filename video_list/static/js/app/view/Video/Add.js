@@ -6,6 +6,7 @@ Ext.define('VideoList.view.Video.Add', {
     layout: 'fit',
     autoShow: true,
     modal: true,
+    width: 600,
 
     initComponent: function() {
         this.items = [
@@ -15,7 +16,8 @@ Ext.define('VideoList.view.Video.Add', {
                     {
                         xtype: 'textfield',
                         name: 'url',
-                        fieldLabel: 'YouTube Video URL'
+                        fieldLabel: 'YouTube Video URL',
+                        width: 400
                     }
                 ]
             }
