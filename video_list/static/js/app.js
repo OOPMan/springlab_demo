@@ -35,14 +35,44 @@ Ext.application({
                             },
                             items: [
                                 {
-                                    xtype: 'VideoList',
-                                    flex: 4
+                                    xtype: 'panel',
+                                    layout: 'fit',
+                                    overflowY: 'auto',
+                                    flex: 4,
+                                    items: [
+                                    {
+                                        xtype: 'VideoList'
+                                    }]
                                 },
                                 {
-                                    xtype: 'button',
-                                    id: 'adder',
-                                    text: 'Click here to add a new Video',
-                                    flex: 1
+                                    xtype: 'panel',
+                                    layout: {
+                                        type: 'hbox',
+                                        align: 'stretch',
+                                        pack: 'center'
+                                    },
+                                    height: 150,
+                                    width: 500,
+                                    items: [
+                                        {
+                                            xtype: 'button',
+                                            id: 'previous',
+                                            text: 'View Previous Page',
+                                            flex: 1
+                                        },
+                                        {
+                                            xtype: 'button',
+                                            id: 'adder',
+                                            text: 'Click here to add a new Video',
+                                            flex: 2
+                                        },
+                                        {
+                                            xtype: 'button',
+                                            id: 'next',
+                                            text: 'View Next Page',
+                                            flex: 1
+                                        }
+                                    ]
                                 }
                             ]
                         }
