@@ -25,6 +25,16 @@ Ext.define('VideoList.controller.Videos', {
                     var adder = Ext.widget('VideoAdder');
                 }
             },
+             'button#previous': {
+                click: function() {
+                    Ext.getStore('Video').previousPage();
+                }
+            },
+            'button#next': {
+                click: function() {
+                    Ext.getStore('Video').nextPage();
+                }
+            },
             'VideoAdder button[action=save]': {
                 click: function(button) {
                     var videoStore = Ext.getStore('Video'),
